@@ -30,10 +30,12 @@ console.log(id === anotherId);
 // Array, Objects, Functions
 
 const heros = ["shaktiman", "naagraj", "doga"];
-let myObj = {
+const myObj = {
     name: "hitesh",
     age: 22,
 }
+
+// We can change name value even if name is on the const object.
 
 const myFunction = function(){
     console.log("Hello world");
