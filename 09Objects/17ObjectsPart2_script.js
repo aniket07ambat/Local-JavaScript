@@ -1,4 +1,7 @@
-// constructor method means singleton
+// Use of singleton
+// https://chat.openai.com/share/fee93a6e-eeeb-44cc-a666-a10d2e12943e
+
+// Object creation using constructor method.
 const youtube = new Object()
 
 youtube.id = "123abc"

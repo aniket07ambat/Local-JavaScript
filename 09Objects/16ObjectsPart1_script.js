@@ -5,7 +5,7 @@
 // Now creating Object using literals.
 
 // Objects come in pairs of key and value.
-// In Objects below name automatically converts into string.
+// In Objects below name, email, age that is Keys are automatically converts into string.
 
 // Declaring symbol into Objects
 const mySym = Symbol("key1")
@@ -48,6 +48,7 @@ console.log(jsUser.greeting1())
 
 jsUser.greeting2 = function(){
     console.log(`Hello, ${this.name} are you using backtick?`)
+    console.log(`Hello, your number is ${this.number}`)
 }
 console.log(jsUser.greeting2())
 

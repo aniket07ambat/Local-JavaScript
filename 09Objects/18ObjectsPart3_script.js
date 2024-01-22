@@ -33,16 +33,18 @@ navbar(company = "hitesh")
 
 // In previout time we get value in eml structure. Now we get value in JSON.
 // JSON: 
-
+/*
 {
     "name": "Aniket",
     "Course": "JS in Hindi",
     "price" : "free",
 }
-
+*/
 // This is JSON syntax. All in format of string
 
 // Sometimes we can also get an array format
+/*
 [
 
 ]
+ */
