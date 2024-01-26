@@ -3,9 +3,10 @@ console.log("Study with Chai and Code");
 const accountId = 34534;
 let accountEmail = "Aniket@gmail.com";
 var accountPassward = "2345";
-accountCity = "Parbhani";
+accountCity = "Parbhani"; // bad practice.
 let accountState;
 
+console.log(accountCity);
 // accountId = 32453; Not allowed to change const variable.
 console.log(accountId); 
 
