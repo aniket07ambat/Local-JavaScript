@@ -8,11 +8,14 @@
 console.log("2" > 1);
 console.log("02" > 1);
 
-// In javascript equility operator "==" and comparisons work differently Comparisons convert null to a number treating it as zero.
+// In javascript equility operator "==" and comparisons work differently
+// Comparisons convert null to a number treating it as zero.
+console.log("DOING CODING HERE");
 
 console.log(null > 0);
 console.log(null == 0);
 console.log(null >= 0);
+console.log("DOING CODING HERE");
 
 console.log(undefined == 0);
 console.log(undefined > 0);

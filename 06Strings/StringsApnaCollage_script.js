@@ -74,7 +74,7 @@ console.log(string3)
 
 // Practice questions
 
-let name = prompt("Enter your fullname without spaces")
+//let name = prompt("Enter your fullname without spaces")
 // let username = "@" + name + name.length;
 let username = `@ ${name} ${name.length}`
 console.log(`Your username is ${username}`)

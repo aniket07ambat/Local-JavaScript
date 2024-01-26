@@ -4,7 +4,7 @@
 // Primitive datatype [Call by value]
 //  Primitive
 
-//  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
+//  7 types : String, Number, boolean, null, undefined, Symbol, BigInt
 
 const score = 100
 const scoreValue = 100.3

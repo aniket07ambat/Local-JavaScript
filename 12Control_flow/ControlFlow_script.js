@@ -58,8 +58,9 @@ switch (month) {
         break;
 }
 
+// https://chat.openai.com/share/03022316-232a-4ad6-8a54-5034324fd635
 
-
+// The switch statement is not suitable for this scenario because it doesn't support range conditions in the case statements.
 
 
 

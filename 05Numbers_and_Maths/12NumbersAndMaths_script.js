@@ -1,12 +1,19 @@
+// convert string into number
+let num = "33"
+ num = Number(num)
+console.log(num);
+
 let score = 400
 console.log(score)
 
+console.log("ONLY CODING HERE");
 let balance = new Number(100)
 console.log(balance)
 
 console.log(balance.toString())
 console.log(balance.toString().length)
 console.log(balance.toFixed(3))
+console.log("ONLY CODING HERE");
 
 const num1 = 390.4356
 console.log(num1.toFixed(3))
@@ -17,6 +24,8 @@ console.log(num2.toPrecision(5))   // Return a string
 let num3 = 70000000
 console.log(num3.toLocaleString('en-IN'))
 
+console.log("ONLY CODING HERE");
+
 // +++++++++++++ Maths +++++++++++++++++++++++++++++
 
 console.log(Math)
@@ -26,6 +35,8 @@ console.log(Math.ceil(4.3))
 console.log(Math.floor(4.7))
 console.log(Math.max(4,5,7,3))
 console.log(Math.min(4,5,7,3))
+
+console.log("ONLY CODING HERE");
 
 console.log(Math.random()) // Give numbers between 0 to 1 (0 and 1 included.)
 console.log((Math.random() * 10) + 1) // Make sure number is greater than 0.

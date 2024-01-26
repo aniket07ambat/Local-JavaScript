@@ -1,7 +1,8 @@
 console.log("Lets solve practice set");
 
 let firstname = "Aniket";
-firstname = firstname + " Ambat";
+// firstname = firstname + " Ambat";
+firstname += " Ambat"
 console.log(firstname);
 firstname = firstname + 45;
 console.log(firstname);
@@ -24,6 +25,7 @@ console.log(d);
 
 d['number'] = 567;
 d['firstname'] = "Ambat";
+d.firstname = "sam"
 console.log(d);
 
 let dictionary = {
@@ -36,5 +38,5 @@ let dictionary = {
 
 console.log(dictionary);
 console.log(dictionary.Calander);
-console.log(dictionary['Towel']);
+console.log(dictionary["Towel"]);
 

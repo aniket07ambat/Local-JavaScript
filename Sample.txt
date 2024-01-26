@@ -1,0 +1,63 @@
+Create three span elements within your #stats element. Give each of them the class stat. Then give the first one the text XP: 0, the second one the text Health: 100, and the third one the text Gold: 50.
+
+Wrap the numbers 0, 100, and 50 in span elements, and wrap those new span elements in strong elements. Then give your new span elements id values of xpText, healthText, and goldText, respectively.
+
+For your #controls element, create three button elements. The first should have the id set to button1, and the text Go to store. The second should have the id set to button2, and the text Go to cave. The third should have the id set to button3, and the text Fight dragon.
+
+Similar to your #stats element, your #monsterStats element needs two span elements. Give them the class stat and give the first element the text Monster Name: and the second the text Health: . After the text in each, add a strong element with an empty nested span element. Give the first inner span element an id of monsterName and the second inner span element an id of monsterHealth
+
+
+Give the #text element a background-color of #0a0a23, a color of #ffffff, and 10px of padding on all sides.
+
+
+Give your #game a maximum width of 500px and a maximum height of 400px. Set the background-color to #ffffff and the color to #ffffff.
+
+Use margins to center it by setting the top margin to 30px, bottom margin to 0px, and the left and right margin to auto.
+
+Finally, give it 10px of padding on all four sides.
+
+
+Using a selector list (selector1, selector2) give both your #controls and #stats elements a border of 1px solid #0a0a23, a #0a0a23 text color, and 5px of padding.
+
+
+Give your #monsterStats element the same border and padding as your #stats element. Set its color to #ffffff and give it a #c70d0d background
+
+
+Next, give your .stat elements a padding-right of 10px.
+
+
+Finally, you will need to add some styles for your buttons. Start by setting the cursor property to pointer. Then set the text color to #0a0a23 and the background-color to #feac32.
+
+Then set the background-image property to linear-gradient(#fecc4c, #ffac33). Lastly, set the border to 3px solid #feac32
+
+
+Now you can start writing your JavaScript. Begin by creating a script element. This element is used to load JavaScript into your HTML file. You should use an opening <script> and closing </script> tag.
+
+
+Before you start writing your project code, you should move it to its own file to keep things organized.
+
+Remove your console.log("Hello World"); line. Then give your now empty script element a src attribute set to ./script.js.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

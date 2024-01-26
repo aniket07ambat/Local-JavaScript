@@ -27,6 +27,7 @@ console.log(student["phone number"]);
 console.log(student["phone number"]);
 
 console.log(typeof marks);
+console.log(typeof student.marks)
 
 
 

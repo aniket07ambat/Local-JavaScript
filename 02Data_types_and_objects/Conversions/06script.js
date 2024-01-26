@@ -19,6 +19,12 @@ let valueInNumber1 = Number(score1)
 console.log(typeof valueInNumber1)
 console.log(valueInNumber1)
 
+let score2 = "33"
+console.log(typeof score2)
+let valueInNumber2 = Number(score2)
+console.log(typeof valueInNumber2);
+console.log(valueInNumber2);
+
 // "33" => 33
 // "33abc" => NaN   -- Not a Number  --Type of NaN is number.
 // true => 1; false => 0;
@@ -41,7 +47,7 @@ console.log(booleanIsLoggedIn)
 console.log("Now doing conversions for Strings")
 
 let someNumber = 22
-
+// console.log(someNumber);
 let stringNumber = String(someNumber)
 console.log(stringNumber)
 console.log(typeof stringNumber)
