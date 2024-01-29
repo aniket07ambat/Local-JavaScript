@@ -1,3 +1,14 @@
+// not defined : means javascript don't allocate memory.
+
+// undefined : is like a placeholder, telling us is there any value assinged or not.
+
+// We can invoke functions before function declaration just because hoisting. [Remember JS Excution context.]
+
+// When Functions are invoke execution context is created
+
+// Every Execution context creates its own memory, separate memory they are Independent of each other.
+
+
 // Harry's practice set
 // Chapter 2
 
@@ -114,15 +125,8 @@ console.log(`This is string 'literls' using "backtick" `);
 
 
 
-// not defined : means javascript don't allocate memory.
 
-// undefined : is like a placeholder, telling us is there any value assinged or not.
 
-// We can invoke functions before function declaration just because hoisting. [Remember JS Excution context.]
-
-// When Functions are invoke execution context is created
-
-// Every Execution context creates its own memory, separate memory they are Independent of each other.
 
 
 
