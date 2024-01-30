@@ -34,7 +34,7 @@ console.log(factorialOF);
 
 // Making an array using Array.from
 // https://chat.openai.com/share/0681aaaf-cda9-4560-8eee-5347ce50e4a5
-
+/*
 function factorial1(number) {  // number = 7
     let arr = Array.from(Array(number).keys())
     console.log(arr);  // 0, 1, 2, 3 , 4, 5, 6
@@ -70,8 +70,11 @@ factorial_real_ans(6)
 // Here we don't handle edge cases like 
 // factorial_real_ans(0) or negative numbers.
 
+*/
 
-
+let a = [1,23,43,4,3]
+let b = a.splice(0, 3)
+console.log(b);
 
 
 
