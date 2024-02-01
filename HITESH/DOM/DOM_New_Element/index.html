@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with Hitesh</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="parent">
+        <!-- Lets see How many nodes are incresing Just by one comment. -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        // Remember to use "." whenever you are useing classes.
+        const parent = document.querySelector('.parent')
+        console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[2]);
+        // console.log(parent.children[3].innerHTML);
+
+        // Remember parent.children[] is html collection. so we use that insted of only parent in  array.
+        // for (let index = 0; index < parent.children.length; index++) {
+        //     console.log(parent.children[index].innerHTML);
+        // } 
+
+        parent.children[0].style.color = "aqua"
+
+        // Remember To move from parent to child
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+
+        // Now to child to parent
+        // Remember DOM is like a tree structure. When we use query selector it actually travellers whole DOM
+        // This is an expensive operation So why don't we directly go from child to parent element if we already has acess to child element
+        const firstChild = document.querySelector('.day')
+        // console.log(firstChild);
+        // console.log(firstChild.parentElement);
+        // console.log(firstChild.nextElementSibling);
+        
+        // Child nodes, Parent nodes are very interesting topic If I, you know, add a comment, it will save in a like a new node. You can try that Console It is interesting
+        console.log("Nodes ", parent.childNodes); // output 9 before adding comment.
+        // here test means line break or " " spacebar. HTML only understands one line break.
+
+        // Now adding an comment and see the Nodes. // output 11
+
+    </script>
+</body>
+</html>
