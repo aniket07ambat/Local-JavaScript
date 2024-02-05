@@ -27,6 +27,15 @@ text.forEach(function (element) {
 text.forEach(function (button) {
     button.addEventListener("click", function (event) {
         console.log(event);
-        console.log(event.target);
+        console.log(event.target); // find where event comes from
+        if(event.target.id === 'grey') {
+            text4.style.backgroundColor = event.target.id
+        }
+        else if(event.target.id === 'white') {
+            text4.style.backgroundColor = "azure"
+        }
+        else {
+            text4.style.backgroundColor = "#212121"
+        }
     })
 })

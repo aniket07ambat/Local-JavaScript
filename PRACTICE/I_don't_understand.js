@@ -9,9 +9,9 @@ console.log(concatenatedArray);
 
 // Callback Function: I don't understand
 
-let isEqual = JSON.stringify({ a: 1, b: 2 }) === JSON.stringify({ b: 2, a: 1 });
+// let isEqual = JSON.stringify({ a: 1, b: 2 }) === JSON.stringify({ b: 2, a: 1 });
 
-
+// Regular Expressions
 
 
 
