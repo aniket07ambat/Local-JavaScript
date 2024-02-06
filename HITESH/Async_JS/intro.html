@@ -1,0 +1,58 @@
+ <!-- https://chat.openai.com/share/6a312a89-da53-4f67-8eff-e528ad0b91d4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: Async</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>Code with Aniket</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(), setInterval(), clearTimeout, clearInterval() are not core JS parts. They provided by Brower engine. 
+    // See window object.
+
+    // setTimeout(function (){
+    //     console.log("SetTimeout prints only once");
+    // }, 2000)
+
+    // setInterval(function (){
+    //     console.log("setInterval Print multiple time at interval of seconds");
+    // }, 2000)
+
+    // Handler:- we give refrence.
+    
+    const sayAniket = function (){
+        console.log("Aniket is Coding.");
+    }
+    // setTimeout(sayAniket(), 2000) // This is wrong. As we have to pass only refrence. () this will excute. 
+
+    // setTimeout(sayAniket, 2000)
+
+    // We want to change Code with Aniket
+    const heading = document.querySelector("h1")
+
+    const changeText = function (event) {
+        heading.innerHTML = "Apply that knowledge"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(changeMe)
+    }, false)
+
+    const changeInterval = setInterval(function (event) {
+        heading.innerHTML = "Practice wiht that knowledge"
+    }, 3000)
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(changeInterval)
+    }, false)
+
+
+
+</script>
+</html>

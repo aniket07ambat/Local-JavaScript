@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // In early days following are used
+    // jQuery 
+    // attachEvent()
+    
+    // JS methods for events
+    // type, timestamp, defaultPrevented,
+    // target, toElement, srcElement, currTarget,
+    // clientX, clientY, screenX, screenY,
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    // document.getElementById("owl").onclick = function() {
+    //     alert("I am Owl.")
+    // } // This approch is wrong as it doesn't provide modern features.
+
+    // // Event listner Syntax: document.addEventListener("event", function() {}, false)
+    // here false is default.
+    // Event propagation:- Script tracking from inside to outside 
+        // Event Bubbling: default i.e false. [used in market]. Goes from ground to high. Form within to outside.
+
+        // Event Capturing: true.
+
+    // // here default values is false. Event Bubbling is occuring while printing below.
+    // document.getElementById("images").addEventListener("click", function(){
+    //     console.log("Clicked inside ul.");
+    // })
+
+    // document.getElementById("owl").addEventListener("click", function() {
+    //     console.log("I am Owl.");
+    // })
+
+
+    // // // As I say false is Default.
+    // document.getElementById("images").addEventListener("click", function(){
+    //     console.log("Clicked inside ul.");
+    // }, false)
+
+    // document.getElementById("owl").addEventListener("click", function() {
+    //     console.log("I am Owl.");
+    // }, false)
+
+
+    // // Now lets see what happent if we Use true.
+    // document.getElementById("images").addEventListener("click", function(){
+    //     console.log("Clicked inside ul.");
+    // }, true)
+
+    // document.getElementById("owl").addEventListener("click", function() {
+    //     console.log("I am Owl.");
+    // }, true)
+    // // Above Event capturing is happening. from outside to inside.
+
+    // // Now If we want to stop executing outer elements means
+    // document.getElementById("images").addEventListener("click", function(){
+    //     console.log("Clicked inside ul.");
+    // })
+
+    // document.getElementById("owl").addEventListener("click", function(event) {
+    //     console.log("I am Owl.");
+    //     event.stopPropagation()
+    // })
+
+    // // Now, When we click on Google we don't want to go to Google website
+    // document.getElementById("google").addEventListener("click", function(event) {
+    //     console.log("Clicked google");
+    //     event.stopPropagation()
+    //     event.preventDefault() // We are cancelling its default behaviour to go towards the website with event.preventDefault()
+    // })
+
+
+    // // If I click on any image, the image will disappear. I want that code
+    // document.querySelector("#images").addEventListener("click", function (event) {
+    //     console.log(event);
+    //     console.log(event.target);
+    //     console.log(event.target.id);
+    //     console.log(event.target.parentNode);
+
+    //     let removeIt = event.target.parentNode 
+    //     removeIt.remove()
+
+    //     // we can also used this to remove
+    //     // removeIt.parentNode.removeChild(removeIt)
+    // }, false)
+
+    // We have huge problem with above code Try to click on list i.e marker
+    // As we do in code, we Actually remove image parent. But when we click on Li's parents, that is UL is removed So the whole list, whole images, are removed
+
+    // Solution
+    document.querySelector("#images").addEventListener("click", function (event) {
+        console.log(event.target.tagName);
+        if(event.target.tagName === "IMG") {
+            let removeIt = event.target.parentNode
+            removeIt.remove()
+        }
+    }, false)
+</script>
+</html>
