@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning API request</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/aniket07ambat"
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", requestUrl)
+    // state is changing
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4) {
+            // console.log(this.responseText);
+
+            // const data = this.responseText
+            // // console.log(data.following); this will not work because most of time data comes in form of string
+            // console.log(typeof data);
+
+            // We have to convert string to JSON
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data);
+            console.log(data.following );
+
+        }
+    }
+    xhr.send()
+</script>
+</html>
