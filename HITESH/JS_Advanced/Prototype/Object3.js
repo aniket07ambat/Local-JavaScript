@@ -8,9 +8,9 @@ function multipleBy5(num) {
 
 multipleBy5.power = 2
 
-// console.log(multipleBy5(5));
-// console.log(multipleBy5.power);
-// console.log(multipleBy5.prototype);
+console.log(multipleBy5(5));
+console.log(multipleBy5.power);
+console.log(multipleBy5.prototype);
 
 function createUser(username, score) {
     this.username = username
@@ -32,6 +32,9 @@ const milk = new createUser("milk", 200)
 
 milk.printMe()
 // chai.printMe()  // This will give cannot read properties of undefined.
+
+milk.increment()
+milk.printMe();
 
 /*
 
