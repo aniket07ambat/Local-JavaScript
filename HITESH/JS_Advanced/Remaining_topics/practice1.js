@@ -73,5 +73,5 @@ class Teacher extends user {
 const chai = new Teacher("Aniket", 22, "abc")
 chai.addCourse()
 
-
+console.log(chai instanceof Teacher); // True
 
