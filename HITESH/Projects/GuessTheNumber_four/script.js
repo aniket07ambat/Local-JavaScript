@@ -58,7 +58,7 @@ function checkGuess(guess) {
 function displayGuess(guess) {
     // here we clean value of userInput
     userInput.value = ""
-    guessSlot.innerHTML += `${guess}  `
+    guessSlot.innerHTML += `${guess}`
     numGuess++
     remaining.innerHTML = `${11 - numGuess}`
 }

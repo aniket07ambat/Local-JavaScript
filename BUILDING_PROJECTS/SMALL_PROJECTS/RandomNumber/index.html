@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color:#212121; color:#fff;">
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a target="_blank" href="https://www.youtube.com/@chaiaurcode">Youtube channel</a>
+    </nav>
+
+    <div id="wrapper">
+        <h1>Number guessing game</h1>
+        <p>Try and guess a random number between 1 and 100.</p>
+        <p>You have 10 attempts to guess the right number.</p>
+        </br>
+        <form class="form">
+            <label2 for="guessField" id="guess">Guess a number</label>
+                <input type="text" id="guessField" class="guessField">
+                <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
+        </form>
+
+        <div class="resultParas">
+            <p>Previous Guesses: <span class="guesses"></span></p>
+            <p>Guesses Remaining: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+</body>
+<script>
+    const submit = document.querySelector("#subt")
+    const userInput = document.querySelector("#guessField")
+    const guessSlot = document.querySelector(".guesses")
+    const remaining = document.querySelector(".lastResult")
+    const lowOrHigh = document.querySelector(".lowOrHi")
+    const startOver = document.querySelector(".resultParas")
+
+    const p = document.createElement("p")
+    
+    let randomNumber = parseInt((Math.random() * 100) + 1)
+
+    // userInput.innerHTML = `${randomNumber}`
+    
+    // we have to Create an array to show to the user In previous guesses field
+    let prevGuess = []
+
+    let numGuess = 1 // No. of guess It goes to point 10
+
+// Whenever we are designing games like stuff we declare
+// We must know game is playable or not.
+let playgame = true
+if(playgame) {
+    submit.addEventListener("click", function (event) {
+        event.preventDefault()
+        const guess = parseInt(userInput.value)
+
+        validateGuess(guess)
+    })
+}
+
+// Now to validate if user gives correct input
+function validateGuess(guess) {
+    if((isNaN(guess)) || guess <= 0 || guess >= 100) {
+        alert("Enter a valid number.")
+    } else {
+        prevGuess.push(guess)
+        if(numGuess === 11) {
+            displayMessage(`Game Over. Random Number: ${randomNumber}`)
+            displayGuess(guess)
+            endGame()
+        } else {
+            displayGuess(guess)
+            checkguess(guess)
+        }
+    }
+}
+
+
+// Cheekgase is equal to random number or not
+function checkguess(guess) {
+    if(guess === randomNumber) {
+        displayMessage(`You guessed it right.`)
+        endGame()
+    } else if(guess > randomNumber) {
+        displayMessage(`You are too high.`)
+    } else {
+        displayMessage(`You are too low`)
+    }
+}
+
+
+function displayGuess(guess) {
+    // here we clean value of userInput and decrease numGuess and show Guesses Remaining
+    userInput.value = ""
+
+    guessSlot.innerHTML += `${guess}`
+    guessSlot.innerHTML += " "
+    
+    numGuess++
+    remaining.innerHTML = `${11 - numGuess}`
+
+}
+
+function displayMessage(message) {
+    lowOrHigh.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame() {
+    userInput.value = ""
+    userInput.setAttribute("disabled", "")
+    p.classList.add("button")
+    p.innerHTML = `<h2 id="NEWGame">Start game again</h2>`
+    startOver.appendChild(p)
+    playgame = false
+    newGame()
+}
+
+function newGame() {
+    const newGameButton = document.querySelector("#NEWGame")
+    newGameButton.addEventListener("click", function (event) {
+        randomNumber = parseInt((Math.random() * 100) + 1)
+        prevGuess = []
+        numGuess = 1
+        guessSlot.innerHTML = ""
+        remaining.innerHTML = `${11 - numGuess}`
+        userInput.removeAttribute("disabled")
+        startOver.removeChild(p)
+        playgame = true
+    })
+}
+
+</script>
+
+</html>
+<!-- const form = document.querySelector(".form")
+form.addEventListener("submit", function (event) {
+    event.preventDefault()
+    const guess = parseInt(document.getElementById("guess").value)
+    if ((isNaN(guess)) || guess <= 0) {
+
+    } else {
+
+    }
+}) -->
