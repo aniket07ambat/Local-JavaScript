@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <h1>For understanding Closures One must  understand the concept of lexical scoping</h1>
+    <button id="orange">Orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    // document.getElementById("orange").onclick = function () {
+    //     document.body.style.backgroundColor = "orange"
+    // }
+    // document.getElementById("green").onclick = function () {
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+    // Real life example of closures
+    function clickHandler (color) {
+        return function () {
+            document.body.style.backgroundColor = color
+        }
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange")
+    document.getElementById("green").onclick = clickHandler("green")
+
+    // Here remember onclick needed an excutable function.
+    
+    // This will not work. 
+    // document.getElementById("orange").onclick = function clickHandler("orange") {
+    // document.getElementById("orange").onclick = clickHandler("orange")
+    // }
+
+
+
+</script>
+</html>

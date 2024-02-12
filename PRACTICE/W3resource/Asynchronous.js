@@ -117,32 +117,67 @@
 
 ////  Write a JavaScript a function that makes an HTTP GET request and returns a Promise that resolves with the response data.
 
-function makeHttpGetRequest(url) {
-    return new Promise(function (resolve, reject) {
-        fetch(url)
-            .then((response) => {
-                if(!response.ok) {
-                    throw new Error("Error")
-                } 
-                return response.json()
-            })
-            .then((data) => resolve(data))
-            .catch((error) => reject(error))
-    })
+// function makeHttpGetRequest(url) {
+//     return new Promise(function (resolve, reject) {
+//         fetch(url)
+//             .then((response) => {
+//                 if(!response.ok) {
+//                     throw new Error("Error")
+//                 } 
+//                 return response.json()
+//             })
+//             .then((data) => resolve(data))
+//             .catch((error) => reject(error))
+//     })
+// }
+
+// const myGithubUrl = "https://api.github.com/users/aniket07ambat"
+ 
+// makeHttpGetRequest(myGithubUrl)
+// .then((data) => console.log("Received data: ", data))
+// .catch((error) => console.log(error))
+
+
+// // //  4. Write a JavaScript function that takes an array of URLs and downloads the contents of each URL in parallel using Promises.
+
+// Practice of async await.
+// async await always return promise. 
+// Code written after async keyword stops excution until promise settels.[means resolve or reject.]
+
+async function fetchAndLogData(url) {
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data);
+    } catch (error) {   
+        console.log(error);
+    }
 }
 
-const myGithubUrl = "https://api.github.com/users/aniket07ambat"
- 
-makeHttpGetRequest(myGithubUrl)
-.then((data) => console.log("Received data: ", data))
-.catch((error) => console.log(error))
+fetchAndLogData("https://api.github.com/users/aniket07ambat")
 
+// // Chaining Asynchronous Operations.
 
+async function getUserAndPosts(userId) {
+    try {
+        const user = await fetch("https://api.github.com/users/aniket07ambat")
+        const userData = await user.json()
+        const post = await fetch("https://api.github.com/users/aniket07ambat")
+        const postData = await post.json()
+        return {userData, postData}
+    } catch(error) {
+        console.error(error)
+        return null
+    }
+}
 
-
-
-
-
+getUserAndPosts(123)
+.then((userdata, postData) => {
+    // console.log(userdata, postData);
+    return userdata
+})
+.then((user) => console.log(user.followers))
+.catch((error) => console.log(error) )
 
 
 
