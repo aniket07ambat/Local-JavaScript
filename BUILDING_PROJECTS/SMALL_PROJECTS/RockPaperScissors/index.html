@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors Tutorial</title>
+    <style>
+        button {
+            background-color: purple;
+            color: aliceblue;
+        }
+        span {
+            color: azure;
+        }
+
+    </style>
+  </head>
+
+  <body style="background-color: #212121; color: rgb(6, 93, 169)" >
+
+    <h2>Computer Choice: <span id="computer-choice"></span></h2>
+    <h2>Your Choice: <span id="user-choice"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
+
+    <div id="start">
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>
+</div>
+
+  </body>
+<script>
+
+const computerChoiceDisplay = document.getElementById('computer-choice')
+const userChoiceDisplay = document.getElementById('user-choice')
+const resultDisplay = document.getElementById('result')
+const possibleChoices = document.querySelectorAll('button')
+const startOver = document.querySelector("#start")
+let userChoice
+let computerChoice
+let result
+
+const p = document.createElement("p")
+
+let playGame  = true
+if(playGame) {
+possibleChoices.forEach(event => {
+    event.addEventListener("click", function (e) {
+        userChoice = e.target.id 
+        userChoiceDisplay.innerHTML = userChoice
+        computerGeneratedChoice()
+        getresults()
+    })
+});
+}
+
+function computerGeneratedChoice() {
+    randomNumber = Math.floor(Math.random() * 3) + 1
+    if (randomNumber === 1) {
+    computerChoice = 'rock'
+  }
+  if (randomNumber === 2) {
+    computerChoice = 'scissors'
+  }
+  if (randomNumber === 3) {
+    computerChoice = 'paper'
+  }
+  computerChoiceDisplay.innerHTML = computerChoice
+  console.log(computerChoice);
+}
+
+function getresults() {
+    if (computerChoice === userChoice) {
+    result = 'its a draw!'
+  }
+  if (computerChoice === 'rock' && userChoice === "paper") {
+    result = 'you win!'
+  }
+  if (computerChoice === 'rock' && userChoice === "scissors") {
+    result = 'you lost!'
+  }
+  if (computerChoice === 'paper' && userChoice === "scissors") {
+    result = 'you win!'
+  }
+  if (computerChoice === 'paper' && userChoice === "rock") {
+    result = 'you lose!'
+  }
+  if (computerChoice === 'scissors' && userChoice === "rock") {
+    result = 'you win!'
+  }
+  if (computerChoice === 'scissors' && userChoice === "paper") {
+    result = 'you lose!'
+  }
+  resultDisplay.innerHTML = result
+  console.log(result);
+
+  endGame()
+}
+
+function endGame() {
+    computerChoice = ""
+    userChoice = ""
+    result = ""
+
+    buttonDisabled()
+
+    p.classList.add("button")
+    p.innerHTML = `<h2 id="NEWGame">Start game again</h2>`
+    startOver.appendChild(p)
+    playGame = false
+    newerGame()
+    
+}
+
+function newerGame() {
+    const newButton = document.querySelector("#NEWGame")
+    newButton.addEventListener("click", function () {
+        computerChoiceDisplay.innerHTML = computerChoice
+        userChoiceDisplay.innerHTML = userChoice
+        resultDisplay.innerHTML = result
+        startOver.removeChild(p)
+
+        buttonEnabled()
+
+        playGame = true
+    })
+}
+
+function buttonDisabled() {
+    possibleChoices.forEach( (button) => {
+        button.setAttribute("disabled", "")
+    })
+}
+
+function buttonEnabled() {
+  possibleChoices.forEach( (button) => {
+        button.removeAttribute("disabled")
+    })
+}
+
+</script>
+</html>
