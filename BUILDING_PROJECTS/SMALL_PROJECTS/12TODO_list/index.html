@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter task...">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="taskList">
+      <!-- Tasks will be dynamically added here -->
+
+    </ul>
+  </div>
+</body>
+<script>
+
+// const inputText = document.querySelector("#taskInput")
+// const taskList = document.querySelector("#taskList") 
+// const button = document.querySelector("#addTaskBtn")
+
+// button.addEventListener("click", function (event) {
+//     const newItem = document.createElement("li")
+//     const text = inputText.value
+//     newItem.textContent = text
+//     taskList.appendChild(newItem)
+//     inputText.value = ""
+// })
+
+const inputText = document.querySelector("#taskInput");
+const taskList = document.querySelector("#taskList");
+const button = document.querySelector("#addTaskBtn");
+
+button.addEventListener("click", function (event) {
+    const text = inputText.value.trim(); // Trim the text to remove leading/trailing whitespaces
+    if (text !== "") { // Check if the input is not empty
+        addTask(text);
+        inputText.value = ""; // Clear the input field after adding the task
+    } else {
+        alert("Please enter a task."); // Show an alert if the input is empty
+    }
+});
+
+function addTask(text) {
+    const newItem = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox"; // Set the input type to checkbox
+    newItem.appendChild(checkbox);
+    const taskText = document.createElement("span");
+    taskText.textContent = text;
+    newItem.appendChild(taskText);
+    taskList.appendChild(newItem);
+}
+
+
+</script>
+</html>
