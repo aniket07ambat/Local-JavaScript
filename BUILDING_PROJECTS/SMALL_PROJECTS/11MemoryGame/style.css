@@ -1,0 +1,10 @@
+body {
+  background-color: #212121;
+  color: aqua;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 300px;
+}
