@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body >
+    <div class="app">
+        <header>
+            <h1 style="color: blue;">Shopping Cart</h1>
+        </header>
+        <main>
+            <div class="product-list">
+                <div class="product">
+                    <img src="apple.jpg" alt="Apple"  />
+                    <section>
+                        <p>Apple - <span id="apple-price">25</span> Rs</p>
+                        <button id="apple-cart">
+                            Add to Cart
+                        </button>
+                    </section>
+                    <p id="apple-count" class="qty">0</p>
+                </div>
+                <div class="product">
+                    <img src="banana.jpg" alt="Banana" />
+                    <section>
+                        <p>Banana - <span id="banana-price">20</span> Rs</p>
+                        <button  id="banana-cart">
+                            Add to Cart
+                        </button>
+                    </section>
+                    <p id="banana-count" class="qty">0</p>
+                </div>
+            </div>
+            <div class="cart">
+                <h2 style="color: blueviolet;">Your Cart</h2>
+                <button  id="discount-btn">
+                    Apply Discount
+                </button>
+                <p id="discount-message" style="color: rgb(227, 8, 238);"></p>
+                <button  id="checkout">
+                    Checkout Total
+                </button>
+                <p id="total-price"></p>
+            </div>
+        </main>
+    </div>
+    <!-- <script src="utils.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+</body>
+<script>
+
+const appleCart = document.querySelector("#apple-cart")
+const bananaCart = document.querySelector("#banana-cart")
+
+const appleItems = document.querySelector("#apple-count")
+const bananaItems = document.querySelector("#banana-count")
+
+let appleCount = 0
+let bananaCount = 0
+appleCart.addEventListener("click", function (){
+    // appleItems++;
+    // let items = appleItems.value
+    // console.log(items);
+
+    appleItems.textContent = `${++appleCount}`
+})
+
+bananaCart.addEventListener("click", function () {
+    bananaItems.textContent = `${++bananaCount}`
+})
+
+document.querySelector("#discount-btn").addEventListener("click", function () {
+    const discountMessage = document.querySelector("#discount-message")
+    discountMessage.textContent = "You Got 10% DISCOUNT"
+})
+
+const applePriceElement = document.querySelector("#apple-price")
+const bananaPriceElement = document.querySelector("#banana-price")
+
+let applePrice = parseInt(bananaPriceElement.textContent)
+let bananaPrice = parseInt(bananaPriceElement.textContent) 
+
+document.querySelector("#checkout").addEventListener("click", function() {
+    let sum = (appleCount * applePrice) + (bananaCount * bananaPrice)
+    console.log(sum);
+    let discountPrice = Math.floor(sum * 10/100)
+    console.log(discountPrice);
+    let finalPrice = sum - discountPrice
+    console.log(finalPrice);
+    const Total = document.querySelector("#total-price")
+    Total.textContent = `Total Amount is ${finalPrice} Rs.`
+})
+
+</script>
+</html>
