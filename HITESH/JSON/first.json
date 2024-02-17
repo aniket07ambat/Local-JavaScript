@@ -1,0 +1,23 @@
+In json : JavaScript object Notation we see key value pairs. 
+Jason is very lightweight compared to xmtl
+Don't use single quotes in Jason only double quotes are valid.
+comma (,) at Last item is not allowed in Jason
+{
+    "name": "ANiket",
+    "age": 22,
+    "isAdmin" : true,
+    "lisecence": null,
+    "array": ["food", "cloths", "oil"],
+    "obj": {
+        "userName": "Ani",
+        "userAge": 22,
+        "myarray": ["3", "5", {"yourName": "AJ"}]
+    }
+
+
+}
+
+To convert into JavaScript Object
+JSON.parse(myJson)
+{name: 'ANiket', age: 22, isAdmin: true}
+

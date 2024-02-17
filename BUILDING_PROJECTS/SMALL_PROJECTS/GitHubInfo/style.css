@@ -29,3 +29,11 @@ h1 {
 .github-info label {
     font-weight: bold;
 }
+
+button {
+    text-align: center;
+    margin: 15px 130px;
+    background-color: rgb(26, 26, 198);
+    color: whitesmoke;
+    font-size: large;
+}

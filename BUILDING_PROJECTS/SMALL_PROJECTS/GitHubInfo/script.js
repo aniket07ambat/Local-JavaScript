@@ -34,6 +34,7 @@ document.querySelector("#button").addEventListener("click", function (event) {
 */   
 // ///// /// More readable code.
 
+/*
 const urlInput = document.querySelector("#url")
 const usernameOutput = document.querySelector("#Username")
 const idOutput = document.querySelector("#ID")
@@ -54,10 +55,21 @@ document.querySelector("#button").addEventListener("click", async function (even
         console.error("Error fetching Data", error);
     }
 });
+ */
 
+// Above code is good 
 
+// I change HTML TOO. SO above code will not work.
+// Let's increase Functionalities.
 
+const usernameInput = document.querySelector("#username")
+const nameOutput = document.querySelector("#name")
+const idOutput = document.querySelector("#ID")
+const followersOutput = document.querySelector("#followers")
 
+let url = "https://api.github.com/users/";
+let completeUrl = url + usernameInput.value;
+console.log(completeUrl);
 
 
 
